@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>在线md5解密/加密</title>
+{% endblock%}
+
+{% block form_area %}
+
+<form  class="form-horizontal" role="form" action="/md5Encrypt/" method="post">
+{% csrf_token %}
+
+		<h4><B>[MD5加密]</B></h4>
+
+        输入要加密的字符串：<br>
+		<textarea class='form-control' type="text" name="qdata" cols="auto" rows="1" >{{data}}</textarea><br>
+		<input class="btn btn-default" type="submit" name="md5jiami" value="确定" ></input><br>
+		返回结果：<br>
+		<textarea class='form-control' type="text" name="qmd5" cols="auto" rows="1"  style="resize:none" >{{str_final}}</textarea><br><br><br>
+		
+		
+		<h4><B>[MD5解密]</B></h4>
+		输入要解密的字符串：<br>
+		<textarea class='form-control' type="text" name="qdata2" cols="auto" rows="1"  style="resize:none" >{{data2}}</textarea><br>
+		<input class="btn btn-default" type="submit" name="md5jiemi" value="确定" ></input><br>
+		返回结果：<br>
+		<textarea class='form-control' type="text" name="qmd5" cols="auto" rows="1"  >{{str_final2}}</textarea><br>
+		<font color="C72B2B">
+		本站每1小时更新一次MD5库，如果没有找到对应的解密结果，请1小时后再试；<br>
+		如遇到请求失败，请稍后重试。
+			</font><br><br><br>
+    </form>
+{% endblock%}

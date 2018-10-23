@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>字符转义/去除转义/中文转unicode/unicode转中文/json转义、压缩、css转义、压缩、js转义压缩,字符串/JS/JSON/CSS处理</title>
+{% endblock%}
+
+{% block form_area %}
+
+<form  action="/deal_string/" method="post">
+<h4><B>字符串/JS/JSON/CSS处理</B></h4>
+{% csrf_token %}
+		<input class="btn btn-info" type="submit" name="str_transfer" value="转义" >
+		<input class="btn btn-info" type="submit" name="str_untransfer" value="去除转义" >
+		<input class="btn btn-default" type="submit" name="str_compress" value="压缩" >
+		<input class="btn btn-primary" type="submit" name="str_china2unicode" value="中文转unicode" >
+		<input class="btn btn-primary" type="submit" name="str_unicode2china" value="unicode转中文" >
+		<br><br>
+        <textarea class='form-control' type="text" name="q" cols="10" rows="10">{{result}}</textarea>
+
+    </form><br><br><br>
+
+
+{% endblock%}

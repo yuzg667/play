@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>在线测试工具</title>
+{% endblock%}
+
+{% block form_area %}
+ <style>
+  .url_txt{
+padding-left:20%;
+padding-right:10%;
+padding-bottom:10%;
+}
+</style>
+<div class="container">
+ <div class="url_txt" >
+<br>
+<h4>
+<a href="/get_req/">get请求</a>
+</h4>
+<br>
+<h4>
+<a href="/post_req/">post请求</a>
+</h4>
+<br>
+<h4>
+<a href="/py_json/">json格式化</a>
+</h4>
+<br>
+<h4>
+<a href="/md5Encrypt/">MD5解密/加密</a>
+</h4>
+<br>
+<h4>
+<a href="/time_date/">时间戳转换/时间差计算</a>
+</h4>
+<br>
+<h4>
+<a href="/deal_string/">字符串转义/压缩/转换</a>
+</h4>
+<br>
+<h4>
+<a class="tab" href="http://www.renyyy.com/">测试热点[人云亦云]</a>
+</h4>
+<br>
+</div>
+</div>
+
+{% endblock%}

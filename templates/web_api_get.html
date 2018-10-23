@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>在线get请求</title>
+{% endblock%}
+
+
+
+{% block form_area %}
+<h4><B>[GET请求]</B></h4>
+
+
+<form class="form-horizontal" role="form" action="/get_req/" method="post">
+{% csrf_token %}
+		请求url：<br>
+		<input type="text" class="form-control" id="firstname" name="qpath"  placeholder="{{path}}" value = "{{path}}" ></input><br>
+
+		<button type="submit" class="btn btn-default">确定</button><br><br>
+
+		返回结果：<br>
+		<textarea class="form-control" rows="20"   placeholder="">{{ message }}</textarea>
+</form><br><br>
+{% endblock%}

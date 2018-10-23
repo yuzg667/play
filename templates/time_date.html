@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>在线时间戳转换-天数计算</title>
+{% endblock%}
+
+{% block form_area %}
+
+
+
+<h4><B>时间转换为时间戳(秒)</B></h4>
+<div class='date'>	
+	<form  action="/time_date/" method="post">
+	{% csrf_token %}
+		
+	<input class="input-s"  type="datetime"  value='{{date1}}' size="20" name="qdate1"> 
+	<input class="input-m" type="submit" name="date2timeStamp" value="->转换->" >
+	<input class="input-medium" type="text" value='{{rslt_timeStamp_s}}' name="rslt">秒(10位) /
+	<input class="input-block-level" type="text" value='{{rslt_timeStamp_ms}}' name="rslt2">毫秒(13位)
+<br><br>
+
+<h4><B>时间戳转换为时间</B></h4>
+	<input type="timestamp"  value='{{timestamp1}}' name="qtimestamp1"> 
+	<input type="submit" name="timeStamp2date" value="->转换->" >
+	<input type="text" value='{{rslt_timeStamp2date}}' name="rslt">
+<br><br>
+
+<h4><B>天数计算</B></h4>
+	<input type="date"  value='{{date_commit1}}' name="q"> ->
+	<input type="date" value='{{date_commit2}}' name="q2">
+	<input type="submit" name="date_differ" value="确定" >
+
+		{{message}}<br>
+		日期相差：<font color="C72B2B">{{differ_result}}</font> 天
+</div>
+
+<br>
+<h4><B>精确时间差计算</B></h4>
+	<input type="datetime"  value='{{date_time1}}' name="qdate_time1"> ->
+	<input type="datetime" value='{{date_time2}}' name="qdate_time2">
+	<input type="submit" name="time_differ" value="确定" ><br>
+		<B>这两个时间相差：<font color="C72B2B">{{diff_detail}}</font> </B><br>
+		
+		这两个时间共相差秒数：<font color="C72B2B">{{diff_s}}</font> 秒<br>
+		这两个时间共相差天数：<font color="C72B2B">{{diff_days}}</font> 天<br>
+		这两个时间共相差周数：<font color="C72B2B">{{diff_week}}</font> 周<br>
+		这两个时间共约相差整月数：<font color="C72B2B">{{diff_month}}</font> 月<br>
+		这两个时间共约相差整年数：<font color="C72B2B">{{diff_year}}</font> 年<br>
+
+
+	   </form>
+	   <br><br><br>
+		
+</div>
+
+{% endblock%}
