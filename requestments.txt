@@ -1,4 +1,0 @@
-django
-requests
-dateutil
-BS4
