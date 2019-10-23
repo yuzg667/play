@@ -23,6 +23,7 @@
 		<div class="shape3">*ଘ(੭*ˊᵕˋ)੭* ੈ✩‧₊˚</div>
 	</div>
 	<script>
+		
 		function getQueryVariable(variable)
 		{
 			   var query = window.location.search.substring(1);
@@ -48,8 +49,12 @@
 		
 		v5 = decodeURI(getQueryVariable("v5")) ;
 		var html5 = '<div class="shape">' + v5 + '</div>';
-		document.getElementById("customWord2").innerHTML = '<div class="shape2">3</div>	<div class="shape2">2</div> <div class="shape2">1</div>' +html1 + html2;
-		document.getElementById("customWord").innerHTML = html1 + html2 + html3 + html4 + html5;
+		
+		var title = decodeURI(getQueryVariable("title")) ;
+		
+		document.getElementsByTagName("title")[0].innerText = title;
+		document.getElementById("customWord2").innerHTML = html1 + html2;
+		document.getElementById("customWord").innerHTML = html3 + html4 + html5;
 		
 		
 	</script>
